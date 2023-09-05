@@ -1,0 +1,24 @@
+---
+layout: post
+title:  "Week 4: Upgrading the Engine"
+date:   2023-06-18 20:00:00 -0500
+categories: cardstock recycle upgrades
+---
+## Monday (6/12)
+This week began by meeting with Dr. Goadrich and Noah. He outlined my future goals, which included a multitude of changes. The first of which was fixing how deck information is stored in the AI. The primary method for this would be sorting decks by a string, which would multiple decks from being combined. I began by mapping out a plan for how to fix said issue.
+
+## Tuesday (6/13)
+The next day, I met with Dr. Goadrich to discuss my plan, which he put on hiatus as he was changing the language itself, which would make any changes meaningless. I then started work on many issues involving the new version of the language.
+
+## Wednesday (6/14)
+I began Wednesday by meeting Dr. Goadrich and Noah again. We came up with a new idea that would not involve rewriting every game, which the previous one did. After yesterday's work, I was met with a few more errors which required the help of Dr. Goadrich to solve. Afterwards, I began work on other issues from the GitHub page, which included the addition of random number generation and making range inclusive.
+
+## Thursday (6/15)
+Thursday was spent solving many more GitHub issues. These were adding exponential, triangular, and Fibonacci numbers to the ReCYCLe Language.
+
+## Friday (6/16)
+On Friday's meeting with Dr. Goadrich and Noah, I presented my current additions to the new version of the ReCYCLe Language. I also began building games for the purpose of testing the new changes. All of them worked except for the exponent addition and the range tests (which worked before, so this confuses me a lot). I'll talk to Dr. Goadrich about the issues on Monday.
+
+Future Goals
+- More Updates (Partitions, Intersections, Disjunctions, and Decks)
+- Improving Engine Speed

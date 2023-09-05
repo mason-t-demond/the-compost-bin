@@ -1,0 +1,85 @@
+---
+layout: post
+title:  "Week 6 1/2: The ReCYCLe v0.5 Update"
+date:   2023-07-12 22:30:00 -0500
+categories: cardstock recycle upgrade
+---
+
+Due to Dr. Goadrich taking a family vacation for the 4th of July, I also did not work during last week. I meant to make a journal update on Sunday in order to update you all on my recent progress, however, I decided to wait until now to retain a bit of focus in this blog entry.
+
+I will stray a bit from the normal structure of these blog entries and make one that covers all of my completed tasks as opposed to the day-by-day entries that I usually follow. I feel this is the best way to accurately portray all of the new changes that I've helped to add to the newest version of ReCYCLe.
+
+# String & Points Storage
+Before, variables and values were stored in a collective "namegr" value. In order to solve this issue, I abstracted the namegr value into one that is either a variable or a string. The same was done for points storage.
+
+The string storage allows for games like Go Fish to work, where we needed a way to track a suit. The points change allows for all players to be a potential owner of the point map.
+
+# Optional Team Creation
+In ReCYCLe v0.4 and before, programmers were required to create teams as part of a game's setup, even if it wasn't a team-based game. Now, programmers can simply leave out the team creation and (in the background of a simulation) all players will be assigned to their own teams.
+
+This was done by creating a default value for teams if no team creation was present in the game file. Essentially, it creates a list of n teams, n being the number of players in the game. Each player is then assigned to their own individual team.
+
+# Operations
+## Random
+Randomization was added which allows players to generate random numbers one of two ways.
+
+The first way is to use the function (random x y), where x is the minimum value (inclusive) and y is the maximum value (inclusive). A random number between those values is generated and returned. The second way is to use the function like so, (random x), where 0 is the minimum value and x is the maximum value (inclusive).
+
+On the developer's end, the code checks for the presence of a second integer and if it finds one, it will execute the first method, whereas it will execute the second one if no second integer is present.
+
+## Triangular Numbers
+Triangular numbers have been added, and are called using (tri x), with x being the xth triangular number. For instance, (tri 1) returns 1, (tri 2) returns 3, (tri 3) returns 6, and so on.
+
+The code takes in the integer and applies the function '(x * (x + 1)) / 2' in order to calculate the value of the xth triangular number.
+
+## Exponential Numbers
+Exponents have made their long awaited entrance to ReCYCLe in this update. They are utilized similarly to the other arithmetic operations and are called via (^ x y). This was also implemented similarly to the other arithmetic operations in C# by taking in both integers from the Parser and using the Math.exp() function on them.
+
+## Fibonacci Numbers
+Fibonacci numbers have also been added as an operation to ReCYCLe v0.5. They are called using (fib x), where x represents the xth Fibonacci number.
+
+This was implemented in C# by taking the integer, denoted by x, and plugging it into Binet's formula, denoted below:
+![Binet's Formula]({{site.baseurl}}/images/binet.png)
+
+# Set Operations
+## Partition
+The partition operation takes an aggregate of cards and splits them into groups based on a certain attribute, such as rank or suit.
+
+This is done in C# by creating a Dictionary of strings and Card Collections where cards are separated into collections based on the aforementioned attribute.
+
+## Disjunction
+The disjunction operation takes a set of card collections and returns all cards that are unique to one of those collections.
+
+This operation uses a dictionary to keep track of how many appearances a card makes in the combination of card collections, and if it only appears once, it is added to the list of cards that are returned.
+
+## Intersection
+The intersection operation takes multiple card collections and finds cards that appear in all of those collections.
+
+This operation is similar to the one for disjunction, however, it returns cards that appear the same number of times as the number of collections.
+
+# Deck Creation & Determinization
+Earlier on in the research project, Dr. Goadrich and I came across an issue where AI players would put cards in the wrong place when making decisions on which card to play. This was due to all cards being tracked using one source deck in the language's parser, which was simply a list of cards.
+
+In order to fix this, we made the source deck into a Dictionary with strings representing the deck names and a list of cards representing the cards in the given deck. After a massive rewrite of other code that depended on the source deck, the AI now acknowledged the proper locations of cards.
+
+# Point Map Grammar
+Before, ReCYCLe programmers would create a point map using the grammar (put points POINTMAP), with POINTMAP being the name of the point map. Now, point maps are created more similarly to a variable, using the grammar (set (game points POINTMAP)). Additionally, they were referenced before by just their name, such as (using POINTMAP), but now they are referenced using the full variable name of (using (game points POINTMAP)).
+
+This also required fixing all the games by changing all the point maps' initializations and references.
+
+# Unit Tests
+Dr. Goadrich pointed out that many of the operations were untested and while we are certain that they work properly, we could not entirely be sure. Therefore, I created test files for the new operations added to the language. These test files include:
+- Test-Rand2: Ensures randomization using two variables works properly by giving players a random number of cards.
+- Test-Rand: Ensures randomization using one variable works properly by giving cards a random score based on rank.
+- Test-Range: Ensures range is inclusive by allowing players to bid a certain number of points on a win.
+- Test-Exp: Ensures exponents work by giving cards exponential values.
+- Test-Fib: Ensures Fibonacci numbers work by giving cards fibonacci values.
+- Test-Tri: Ensures triangular numbers work by giving cards triangular values.
+- Test-Team: Ensures that teams are assigned to players without the use of team creation. Uses a rewrite of Agram.
+- Test-Team2: Ensures players can be referred to as their team without the use of team creation. Also uses a rewrite of Agram.
+- Test-Partition: Ensures partioning works by giving players specific cards and checking the size of their hand partitions.
+- Test-Intersect: Ensures intersection works by giving players specific cards and checking the size of their hand intersections.
+- Test-Disjunct: Ensures disjunction works by giving players specific cards and checking the size of their hand disjunctions.
+
+# Future Goals
+Now that ReCYCLe has been fully upgraded to Version 0.5, I will now look to accomplish my goal of simulating games faster. The first step to this is attempting to write games in C# rather than the ReCYCLe language we currently use. This will allow us to cut out the middleman in the language interpreter, which should allow us to write games faster.

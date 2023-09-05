@@ -1,0 +1,40 @@
+---
+layout: post
+title:  "Week 7: Re-Simulating Enchère"
+date:   2023-07-16 20:00:00 -0500
+categories: cardstock recycle upgrade
+---
+
+With the new ReCYCLe update fixing issues concerning how the AI made decisions, I decided to re-simulate Enchère and its multiple iterations to see if there were any significant changes. The first time around, I only did 100 simulations, however, I did 3 different 100 game simulations to make sure that there weren't too many variations between them. The results are visible below:
+
+![The first simulation from when Enchère was first created.]({{site.baseurl}}/images/enchere/simulation1.png)
+
+![Simulation 2, finished in the past week.]({{site.baseurl}}/images/enchere/simulation2.png)
+
+![Simulation 3, also finished in the past week.]({{site.baseurl}}/images/enchere/simulation3.png)
+
+![Simulation 4, again, finished in the past week.]({{site.baseurl}}/images/enchere/simulation4.png)
+
+# Conclusions
+## Convergence
+Across the board, convergence is relatively the same for all sets of simulations. The differences, in my opinion, are negligible at best.
+
+## Drama
+Drama is relatively higher in the newer simulations, if only by a small amount. For Enchère Avancée and Enchère Originale, however, the numbers are up by a significant amount (between 5% and 10%).
+
+## Security
+Security is mostly the same. There is not much of a difference to discuss in this category.
+
+## Fairness
+Fairness is still 0, which makes sense to me as Enchère is mostly luck-based. I believe the win probability for all 3 games is dependent on the cards each player draws.
+
+## Spread
+A common theme for spread in the new simulations is that Enchère is a lot closer to the other versions of the game, which makes sense as it shouldn't be too different from them. Also, Enchère Originale is much lower now in comparison to the others now, which makes me wonder what changes in that game are affecting the available choices. I believe it is due to the requirement to follow suit if possible.
+
+## Order
+Order is the most bizarre heuristic of the six, as there is much variability between sets of simulations and games. Enchère Originale is much lower than the others, even going into the negative (is that even possible?). Enchère is sometimes very high and other times in the same region as Enchère Avancée. Enchère Avancée also loses its position from before as the game with the most order and now hovers between 1st and 2nd most.
+
+# Future Goals
+What the simulations have made abundantly clear is that we need more of them. I could only run simulations in sets of 100 because they tend to take around 30 minutes for the AI sets to finish. Dr. Goadrich says our goal is to eventually reach around 100,000 simulations at a time, and with the current performance, that would take days upon days to finish.
+
+This is why my next step is to write a game in C# and see how fast it runs. Because the language is compiled, we don't have to worry about the language being parsed and translated, so we increase a bit of performance on that end. Additionally, it will remember certain instructions as opposed to ReCYCLe, so it should complete some sections of code quicker.

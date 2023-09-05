@@ -1,0 +1,57 @@
+---
+layout: post
+title:  "Week 1: Introduction to CardStock"
+date:   2023-05-26 16:44:37 -0500
+categories: cardstock recycle enchere
+---
+## Monday (5/22)
+My journey into the CardStock language began Monday, May 22 with a meeting with Dr. Goadrich, one of my Computer Science professors at Hendrix College, and Noah Morris, another student and peer at Hendrix College. Dr. Goadrich began the meeting by introducing us to the basic structure and syntax of the RECYCLE language. Additionally, we played Hearts and Pairs to learn some of the card games we would be working with throughout this project. Afterwards, Dr. Goadrich showed us the code for those games in the RECYCLE language so that we could compare them and start working on our own.
+
+My first assignment was to start creating a game in the language to demonstrate my knowledge so far. While in the meeting, my mind was buzzing with ideas and the one that stuck in my head the most was a game called Enchère (French for Auction/Bid). The general idea is that players will bid on Queens, Kings, and Aces using the other cards to create a poker hand and the highest ranking hand wins. I tested it with both Dr. Goadrich, Noah, and with my friends later in the day to iron out the exact rules so I could properly code it.
+
+The other part of my work today was spent downloading programs important to the work this summer. For one, I had to clone the CardStock repository and start looking at some of the games that were included to better understand the language. Also, I downloaded Anaconda to my computer so that I could start learning how to interpret game statistics on my own.
+
+## Tuesday (5/23)
+The majority of my work on Tuesday was coding Enchère. The heavy utilization of parentheses threw me off the most when I started, and I eventually looked to Dr. Goadrich for help. Through the process of coding the game, I had to exclude many of my intended rules due to the limitations of the RECYCLE language. This included how the winner was determined, instead of players having their cards judged as a poker hand, a simple points system was implemented.
+
+Dr. Goadrich also showed me how to test my created games and gather statistics. I had to re-install Anaconda as my original build did not work properly for some reason. Also, I did not know how to run the simulations properly (to be explained later), so I spent a lot of time waiting for the simulations to finish. During that time, I studied a lot of the already-coded games and tried to look for any similarities that could help me implement the hand-grading system akin to Poker.
+
+## Wednesday (5/24)
+On Wednesday, I met with Dr. Goadrich again and shared my progress with him. I had the game completed but could not simulate it and get any data on it. He explained to me that I was running the game in Debug mode, which is meant to ensure that the game worked properly. In order to get the statistics, I would have to run them in release mode, which runs much faster. During the meeting, we also played Bottle Imp and Coup. Bottle Imp was interesting in its ability to give "lower" cards an advantage. Coup was also interesting in that it was a game that didn't require a complete deck of cards, which allowed for some interesting strategies to the game.
+
+I also created a BlogSpot page at the suggestion of Dr. Goadrich, however, you can now see that I ended up going with a blog through GitHub. After testing, I officially made my first pull request to the repository, which was adding Enchère to the list of games.
+
+I then explored alternative methods of modifying Enchère after a suggestion by Dr. Goadrich. Due to the limitations of the language, I made Enchère into a game that was very linear in who was likely to win and lose. Therefore, I had to find some ways to make it a bit more exciting as the game progressed. Some ideas that we came up with were a requirement to follow suit, penalizing certain cards, and even trading out cards.
+
+I also continued my search for adding hand-building to Enchère. This included an online discussion with Noah, who was actually working on a version of Poker in the RECYCLE language. He created an algorithm to try and find poker hands, however it wasn't completely finished at the time and was hard to understand, so I scrapped it altogether for a different version of the original game.
+
+## Thursday (5/25)
+Today's work was lengthy but mostly code-oriented. I modified Enchère with many different rules, with this modified version now being known as Enchère Avancée (Advanced Auction) 
+
+#### Addition of the Joker
+After looking at the games Knaves and Omnibus Hearts, I added the Joker to the pile of Queens, Kings and Aces, and players who win it are penalized 10 points. This can assist some players in preventing leads from getting too high. 
+
+#### Suit-based Gameplay
+Additionally, players are now required to follow suits in order to win the cards they are bidding on. There is a catch, however, which is known as the "Spare", or the card left over from the deck. A card played with the same rank as the spare was given even more priority than cards that simply match the suit of the betting card, so if the spare ends up being a really low number, this could greatly benefit those with worse hands.
+
+#### A New Points System
+Finally, the points system was modified to revolve around winning Hearts cards. Any card won is worth a point, however hearts are worth an extra point. Additionally, the King of Hearts is worth 7 total points. This means if a player were to win every suit except the Joker (a perfect hand), they would have 20 points.
+
+I also started working on a potential idea for Solitaire in CardStock after spending much of the afternoon playing solitaire with my friends.
+
+## Friday (5/26)
+On today's meeting with Dr. Goadrich, we updated him on our progress and then played two games: Stealing Bundles and Razzia. Afterwards, I then had to meet with Dr. Goadrich individually in order to fix a few of the issues that Enchère Avancée had within the code. Afterwards, I could finally test it and gather statistics on it.
+
+I also discussed my Solitaire idea with Dr. Goadrich, however he explained to me that CardStock is better suited to multiplayer games. Therefore, I set out on my goal to create a multiplayer game based on Solitaire.
+
+The rest of my time today was spent creating this blog. It was very simple to set up, however I struggled in my attempts to change the theme and eventually settled on the default one.
+
+### Future Work
+As I'm very bad at writing conclusions, the final section of every blog will be a list of things I hope to accomplish within the next week.
+
+- Run Analysis for Enchère Avancée (must compare it to the original Enchère)
+- Create Pitch in CardStock (a game that my friends play a lot that I want to get into)
+- Create Ladder in CardStock (a hybrid of Uno and Solitaire that could be interesting)
+- Create presentation for Wednesday, June 1st (Will present my current project progress to another group of researchers)
+- Get help from a friend in changing the blog's theme.
+- Working with engine code as opposed to RECYCLE code.

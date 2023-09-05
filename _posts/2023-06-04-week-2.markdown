@@ -1,0 +1,49 @@
+---
+layout: post
+title:  "Week 2: The Three Heads of Enchère"
+date:   2023-06-04 20:19:23 -0500
+categories: cardstock recycle enchere bugs
+---
+## Monday (5/29)
+No Work Today: President's Day
+
+## Tuesday (5/30)
+Today, I began the week by meeting with Dr. Goadrich. Noah and I shared the progress with analyzing our games and future goals. Additionally, we played Land Unter, a card game where players must stay afloat by aiming for a very low or very high card. Players with hands that lean toward the middle numbers are given more flotation devices in exchange.
+
+Previously, I mentioned making Ladder and Pitch, however, the only one that ended up working out was Pitch. This was due to not wanting to create too many games at once and rather focus on finding important information about variations in games. Thus, I spent the rest of the day coding Pitch in the ReCYCLE Language.
+
+Dr. Goadrich also assigned me to make a blog post about Enchère and Enchère Avancée.
+
+## Wednesday (5/31)
+I began Wednesday by working on the analysis for Enchère. After getting as far as I could, I then met with Dr. Goadrich to get his help finishing Pitch. Afterwards, I made variants of the game for 2 through 6 players. My goal here was to test if the game's heuristics changed depending on how many players were involved. However, this part of the week is where I reached a fatal error within CardStock's testing.
+
+Pitch is a bidding game where players bet on how many points they will win in a round. If player's make that bet, they earn that bet in points, however, if they lose that bet, they will lose those points. The game typically goes to 11 and the maximum number of points in a round is 4. This meant that the game would require multiple rounds. Unfortunately, the AIs in CardStock are EXTREMELY bad bidders, and this resulted in many games ending prematurely due to an infinite loop (some AIs would reach -100 points).
+
+I didn't want to simulate the game without tracking the full progression of rounds, so I decided to scrap this idea and save it for later after Dr. Goadrich and I retool the engine. Hopefully, the faster simulation times will allow me to test it much more quickly.
+
+I then moved to creating my original idea for Enchère, as Noah had finished creating Poker in ReCYCLE. As stated in the previous blog post, I wanted players to bid on cards to form a high-ranking Poker-style hand, rather than just bidding on cards for points. This version was known as Enchère Originale (Original Auction). I believed I had completed the game, but I ran into another fatal error in testing, which I explored more the next day.
+
+I also started writing the CardStock blog entry for Enchère and Enchère Avancée.
+
+## Thursday (6/1)
+Thursday opened with another meeting with Dr. Goadrich. We began by viewing Noah's presentation for Friday, which involved the history of simulating card games and also CardStock in comparison to Ludii. After this, we played a card game called Love Letter, where players must remember hidden cards in order to deliver a love letter to the princess. For the last part of our meeting, we looked at a game that Noah was creating in Ludii.
+
+Afterwards, Dr. Goadrich and I met one-on-one to look at the error plaguing Enchère Originale. After a long process, we discovered a bug that caused AI players to put cards in the wrong decks when simulating multiple instances of the game to make choices. This led to some cards not existing and also not having precedence values. While we could not fix such an error at the moment, we did change how the engine views maximums in order to create a temporary fix that allowed Enchère Originale to work. 
+
+Another issue I had with Enchère Originale was that it struggled to detect 2-pair hands. While I could not make a fix that solved the issue for both Noah and I's games, I was able to make a fix for mine that did not require too many lines of code.
+
+Afterwards I ran the analysis for Enchère Originale, and I was able to do the entire analysis as Dr. Goadrich finished his final updates to the analysis notebooks. I used all of them to complete my presentation for Friday, which analyzed how certain rule changes affect game heuristics. This was similar to Dr. Goadrich's presentation at the beginning of my research, where he explained all of the different variations of hearts and which ones affected gameplay heuristics the most.
+
+## Friday (6/2)
+On Friday, we met with Dr. Gabriel Ferrer (another Hendrix professor) and his group of researchers to discuss our current findings and progress. Dr. Ferrer's group was working with the iRobot and it's different uses and applications, such as a remote-controlled robot and a robot flamethrower.
+
+For my presentation, I talked about the differences in the versions of Enchère and how they differed in terms of heuristics. For instance, Enchère (the first one) had the highest drama, which indicated more potential for comebacks compared to the others. Enchère also has the higest spread, indicating that bad decisions in Enchère were typically more costly than those in Enchère Avancée and Enchère Originale.
+
+After the presentation, Dr. Goadrich tasked me with adding new issues to the GitHub page, including: fixing the maximum issue (which we solved on Thursday) and printing the spread across the course of the game. Afterwards, I began compiling my weekly journal to create this blog.
+
+### Future Work
+- Finish Enchère blog by including Enchère Originale rules and statistics for all three games.
+- Start working on Github page issues
+    - Printing choice spread
+    - CardStock Grammar
+    - Fix AI Determination Error (cards being put in the wrong places)

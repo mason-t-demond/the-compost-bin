@@ -1,8 +1,9 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
 
-gem 'jekyll', '4.0.0'
+source "https://rubygems.org"
+gemspec
 
-group :jekyll_plugins do
-  gem 'jekyll-paginate'
-  gem 'jekyll-sitemap'
-end
+gem "jekyll", ENV["JEKYLL_VERSION"] if ENV["JEKYLL_VERSION"]
+gem "kramdown-parser-gfm"
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+gem 'webrick'

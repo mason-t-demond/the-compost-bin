@@ -1,0 +1,31 @@
+---
+layout: post
+title:  "Week 5: Almost Halfway There"
+date:   2023-06-25 20:00:00 -0500
+categories: cardstock recycle upgrade
+---
+## Monday (6/19)
+No work today in honor of Juneteenth.
+
+## Tuesday (6/20)
+Last week, I still needed to solve the issue of random number generation so that a user could call the random function with only one number. After discussing it with Dr. Goadrich, it became a pretty simple fix. However, it was also my introduction to actually modifying the ReCYCLe Language and not just its interpreter. After this, I spent time creating a plan to solve the final issues. This included:
+- Adding a partition function to separate cards by rank/suit.
+- Creating functionality for a disjunction of two sets.
+- Creating functionality for an intersection of two sets.
+- Deck determinization
+- Allow for a default team creation of every player on their own.
+
+## Thursday (6/22)
+Today, I began work on disjunction, intersection and partitions. I was able to solve the first two issues after a bit of time, but the third one stumped me. This was mostly due to my lack of understanding on what exactly a partition was, however, I would later complete it.
+
+## Friday (6/23)
+Today, I met again with Dr. Goadrich and Noah, where Dr. Goadrich helped me to fix my issues with the three upgrades I made the night before.
+
+## Sunday (6/25)
+As you may see from the journal entries so far, my work this week appears to be very minimal. This is due to me going through some kind of bizarre bodily fatigue. Therefore, I took the weekend to get a bit more work done.
+
+I worked on more of the other issues involving ReCYCLe v0.5. I modified the way teams are created to allow for "default team arrangement." This meant that if the programmer did not enter a team layout for the game, it would now default to a free for all. I also was finally able to fix the partition issue that plagued me for so long. Or so I thought. A strenuous period of creating and solving errors only resulted in more confusion and an untestable final product.
+
+Future Goals
+- Finish ReCYCLe v0.5
+- Translating .gdl files into C# files
