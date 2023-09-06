@@ -39,7 +39,8 @@ Exponents have made their long awaited entrance to ReCYCLe in this update. They 
 Fibonacci numbers have also been added as an operation to ReCYCLe v0.5. They are called using (fib x), where x represents the xth Fibonacci number.
 
 This was implemented in C# by taking the integer, denoted by x, and plugging it into Binet's formula, denoted below:
-![Binet's Formula]({{site.baseurl}}/images/binet.png)
+
+![Binet's Formula]({{site.baseurl}}/assets/images/binet.png)
 
 # Set Operations
 ## Partition

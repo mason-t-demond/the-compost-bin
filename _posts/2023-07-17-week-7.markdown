@@ -7,13 +7,17 @@ categories: cardstock recycle upgrade
 
 With the new ReCYCLe update fixing issues concerning how the AI made decisions, I decided to re-simulate Enchère and its multiple iterations to see if there were any significant changes. The first time around, I only did 100 simulations, however, I did 3 different 100 game simulations to make sure that there weren't too many variations between them. The results are visible below:
 
-![The first simulation from when Enchère was first created.]({{site.baseurl}}/images/enchere/simulation1.png)
+The first simulation from when Enchère was first created.
+![]({{site.baseurl}}/assets/images/enchere/simulation1.png)
 
-![Simulation 2, finished in the past week.]({{site.baseurl}}/images/enchere/simulation2.png)
+Simulation 2
+![]({{site.baseurl}}/assets/images/enchere/simulation2.png)
 
-![Simulation 3, also finished in the past week.]({{site.baseurl}}/images/enchere/simulation3.png)
+Simulation 3
+![]({{site.baseurl}}/assets/images/enchere/simulation3.png)
 
-![Simulation 4, again, finished in the past week.]({{site.baseurl}}/images/enchere/simulation4.png)
+Simulation 4
+![]({{site.baseurl}}/assets/images/enchere/simulation4.png)
 
 # Conclusions
 ## Convergence
