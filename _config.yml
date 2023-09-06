@@ -1,12 +1,14 @@
-title: Databased & Webpilled
+title: The Compost Bin
 name: Mason Mason
 email: MasonTD@hendrix.edu
 
 # The `>` after `description:` means to ignore line-breaks until next key.
 # If you want to omit the line-break after the end of text, use `>-` instead.
 description: >
-  A journal chronicling my journey learning to create in HTML, CSS, and other
-  web-based mediums to interact with the coding world on a grander scale.
+  This blog will cover the journey of my research with Dr. Mark
+  Goadrich at Hendrix College. We are working on the RECYCLEd
+  CardStock project, which simulates and gathers data from card
+  games.
 
 # Build settings
 
@@ -33,7 +35,7 @@ minima:
   #   - { platform: flickr,         user_url: "https://www.flickr.com/photos/jekyll" }
     - { platform: github,         user_url: "https://github.com/mason-t-demond" }
   #   - { platform: google_scholar, user_url: "https://scholar.google.com/citations?user=qc6CJjYAAAAJ" }
-    - { platform: instagram,      user_url: "https://www.instagram.com/hendrixswordclub/"}
+  #   - { platform: instagram,      user_url: "https://www.instagram.com/hendrixswordclub/"}
   #   - { platform: keybase,        user_url: "https://keybase.io/jekyll" }
   #   - { platform: linkedin,       user_url: "https://www.linkedin.com/in/jekyll" }
   #   - { platform: microdotblog,   user_url: "https://micro.blog/jekyll" }
@@ -41,7 +43,7 @@ minima:
   #   - { platform: stackoverflow,  user_url: "https://stackoverflow.com/users/1234567/jekyll" }
   #   - { platform: telegram,       user_url: "https://t.me/jekyll" }
   #   - { platform: twitter,        user_url: "https://twitter.com/jekyllrb" }
-    - { platform: youtube,        user_url: "https://www.youtube.com/watch?v=iDLmYZ5HqgM&ab_channel=Maurimies" }
+  #   - { platform: youtube,        user_url: "https://www.youtube.com/watch?v=iDLmYZ5HqgM&ab_channel=Maurimies" }
 
 # If you want to link only specific pages in your header, uncomment this and add the path to the pages in
 # order as they should show up.
